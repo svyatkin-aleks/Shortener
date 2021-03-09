@@ -3,9 +3,11 @@ from .models import *
 
 
 class ShortenerCreateSerializer(serializers.ModelSerializer):
+    short = serializers.ReadOnlyField(source='short_url')
+
     class Meta:
         model = Shortener
-        fields = ['long_url']
+        fields = ['long_url', 'short']
 
 
 class ShortenerListSerializer(serializers.ModelSerializer):

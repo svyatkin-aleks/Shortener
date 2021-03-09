@@ -17,5 +17,8 @@ class Shortener(models.Model):
     short_url = models.CharField(max_length=6, primary_key=True, default=generate_random_string)
     added = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.long_url}: {self.short_url}'
+
     class Meta:
         ordering = ['-added']

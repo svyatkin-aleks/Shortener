@@ -19,7 +19,7 @@ class ShortenerListView(ListAPIView):
 class ShortenerRetrievView(RetrieveAPIView):
     queryset = Shortener.objects.all()
     serializer_class = ShortenerRetrieveSerializer
-    lookup_field = 'short_url'
+    lookup_field = 'long_url'
 
 
 def urlRedirect(request, short_url):
